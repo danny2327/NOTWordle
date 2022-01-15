@@ -74,6 +74,15 @@ function gameOver() {
   console.log("Game Over");
 }
 
+function win() {
+  console.log("Holy shit you actually won");
+}
+
+function nextWord() {
+  currentWord++
+  currentChar = 0;
+}
+
 function readWord() {
   let guess = ''
   let word = wordsArray[currentWord];
@@ -90,16 +99,22 @@ function showLetters(guess) {
   let chars = wordsArray[currentWord].getElementsByClassName('letterbox')
   let correct = 0;
   for (let i = 0; i < letters; i++) {
+    let key = document.getElementById(guess[i])
     console.log(WORD.indexOf(guess[i]));
     if(WORD[i] === guess[i]) {
       console.log("match!");
       correct++;
       chars[i].classList.add('rightplace')
+      key.classList.add('rightplace')
     } else if (WORD.indexOf(guess[i]) > -1) {
+      console.log("wrong place");
       chars[i].classList.add('wrongplace')
+      key.classList.add('wrongplace')
+    } else {
+      key.classList.add('guessed')
     }
-    return correct
   }
+  return correct
 }
 
 
