@@ -70,11 +70,10 @@ body {
   padding-left: 30px;
 }
 
-.notinword {
-}
-
 .wrongplace {
+  background-color: rgb(150, 135, 4);
 }
 
 .rightplace {
+  background-color: rgb(5, 126, 51);
 }
