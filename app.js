@@ -251,6 +251,15 @@ function createEventListeners() {
       }
     }
   })
+
+  document.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    if (e.keyCode > 64 && e.keyCode < 91) {
+      enterLetter(e.key.toUpperCase())
+    } else if (e.key === "Enter") {
+      pressEnter()
+    }
+  })
 }
 
 function deleteLastLetter() {
