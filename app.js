@@ -59,10 +59,34 @@ function createEventListeners() {
       deleteLastLetter()
     }
   })
+
+  // document.getElementById('btnHow')
+  document.getElementById('btnHow').addEventListener('click', () => {
+      showHowToModal();
+  });
+
+  document.getElementById('btnReset').addEventListener('click', () => {
+      resetGame()
+  });
+
+  document.getElementById('btnNew').addEventListener('click', () => {
+      newGame();
+  });    
+}
+
+function resetGame() {
+  console.log('reset');
+}
+
+function newGame() {
+  console.log('new');
+}
+
+function showHowToModal() {
+  
 }
 
 function deleteLastLetter() {
-
 
 
   console.log(currentChar);  
@@ -121,6 +145,11 @@ function readWord() {
   }  
   return guess;
 }
+
+// 
+// figure out why pressing enter wtih 4 letters submits, but with error
+
+// 
 
 function showLetters(guess) {
   let chars = wordsArray[currentWord].getElementsByClassName('letterbox')
