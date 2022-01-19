@@ -132,9 +132,10 @@ function deleteLastLetter() {
 
 function pressEnter() {
   let wordFull = true;
-  console.log((wordsArray[currentWord]));
-  for (let l = 0; l < wordsArray[currentWord].length; l++) {
-    if(Array.from(wordsArray[currentWord])[l] ==='') {
+  
+  for (let l = 0; l < letters; l++) {
+    // console.log(wordsArray[currentWord].children[l]);
+    if(wordsArray[currentWord].children[l].textContent ==='') {      
       wordFull=false;
     }     
   }

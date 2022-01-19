@@ -36,6 +36,9 @@ body {
   background-color: rgb(70, 124, 224);
 }
 
+.btn-primary {
+  background-color: rgb(16, 16, 138);
+}
 
 .modal small {
   color:rgb(177, 174, 174);
