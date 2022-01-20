@@ -17,6 +17,8 @@ getNewWord();
 const words = 6;
 const letters = 5;
 
+let isGameOver = false;
+
 let currentWord = 0;
 let currentChar;
 
@@ -110,24 +112,28 @@ function resetGame() {
 function newGame() {
   resetSelectedLetter();
   resetGame();
+  isGameOver = false;
   getNewWord();
 }
 
 function enterLetter(letter) {
-  //if word not full
-  let chars = wordsArray[currentWord].getElementsByClassName('letterbox')
-  chars[currentChar].textContent = letter  
-  if(currentChar < letters-1) {
-    setChar(currentChar+1)
+  if (!isGameOver) {  
+    let chars = wordsArray[currentWord].getElementsByClassName('letterbox')
+    chars[currentChar].textContent = letter;
+    if(currentChar < letters-1) {
+      setChar(currentChar+1)
+    }
   }
 }
 
 function deleteLastLetter() {
-  const chars = wordsArray[currentWord].getElementsByClassName('letterbox');
-  if(chars[currentChar].textContent === ''  && currentChar > 0) {
-    setChar(currentChar-1)
+  if (!isGameOver) {  
+    const chars = wordsArray[currentWord].getElementsByClassName('letterbox');
+    if(chars[currentChar].textContent === ''  && currentChar > 0) {
+      setChar(currentChar-1)
+    }
+    chars[currentChar].textContent = '';
   }
-  chars[currentChar].textContent = '';
 }
 
 function setChar(char) {
@@ -151,19 +157,21 @@ function resetSelectedLetter() {
 }
 
 function pressEnter() {
-  let wordFull = true;
-  
-  for (let l = 0; l < letters; l++) {
-    // console.log(wordsArray[currentWord].children[l]);
-    if(wordsArray[currentWord].children[l].textContent ==='') {      
-      wordFull=false;
-    }     
-  }
-  
-  if(wordFull) {
-    submitWord();
-  } else {
-    console.log('Word is incomplete');
+  if (!isGameOver) {  
+    let wordFull = true;
+    
+    for (let l = 0; l < letters; l++) {
+      // console.log(wordsArray[currentWord].children[l]);
+      if(wordsArray[currentWord].children[l].textContent ==='') {      
+        wordFull=false;
+      }     
+    }
+    
+    if(wordFull) {
+      submitWord();
+    } else {
+      console.log('Word is incomplete');
+    }
   }
 }
 
@@ -179,11 +187,15 @@ function submitWord() {
 }
 
 function gameOver() {
+  isGameOver = true;
+  console.log(isGameOver);
   document.getElementById('theWordModal').textContent = WORD;
   gameOverModal.show()
 }
 
 function win() {
+  isGameOver = true;
+  console.log(isGameOver);
   document.getElementById('guessesModal').textContent = currentWord+1;
   wonModal.show()
 }

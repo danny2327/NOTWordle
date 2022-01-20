@@ -119,7 +119,9 @@
         <div>Sorry, you didn't guess correctly. <br>
           The word was <span id="theWordModal"></span>
         </div>
-        <button class="btn btn-primary" id="losePlayAgain">Play Again</button>
+        <div class="modal-footer">
+          <button class="btn btn-primary" id="losePlayAgain">Play Again</button>
+        </div>
       </div>
     </div>
   </div>
@@ -135,6 +137,8 @@
       <div class="modal-body">
         <h1>You Won!</h1>
         Adequate Performance. You solved the puzzle in <span id="guessesModal"></span> guesses.
+      </div>
+      <div class="modal-footer">
         <button class="btn btn-primary" id="winPlayAgain">Play Again</button>
       </div>
     </div>
