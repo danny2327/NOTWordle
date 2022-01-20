@@ -70,6 +70,10 @@ body {
   text-align: center;
 }
 
+.selectedLetter {
+  border: 1px solid rgb(96, 165, 211)
+}
+
 #keyboard {
   margin-left: 32px;
   display:flex;

@@ -18,7 +18,7 @@ const words = 6;
 const letters = 5;
 
 let currentWord = 0;
-let currentChar = 0;
+let currentChar;
 
 function getNewWord() {
   WORD = wordList[Math.round(Math.random()*wordList.length)]
@@ -82,8 +82,6 @@ function createEventListeners() {
     wonModal.hide()  
     newGame();
   });    
-
-
 }
 
 function resetGame() {
@@ -106,27 +104,49 @@ function resetGame() {
 
   //reset guess position
   currentWord = 0;
-  currentChar = 0;
+  setChar(0);
 }
 
 function newGame() {
+  resetSelectedLetter();
   resetGame();
   getNewWord();
 }
 
+function enterLetter(letter) {
+  //if word not full
+  let chars = wordsArray[currentWord].getElementsByClassName('letterbox')
+  chars[currentChar].textContent = letter  
+  if(currentChar < letters-1) {
+    setChar(currentChar+1)
+  }
+}
 
 function deleteLastLetter() {
+  const chars = wordsArray[currentWord].getElementsByClassName('letterbox');
+  if(chars[currentChar].textContent === ''  && currentChar > 0) {
+    setChar(currentChar-1)
+  }
+  chars[currentChar].textContent = '';
+}
 
-  console.log(currentChar);  
-  const chars = wordsArray[currentWord].getElementsByClassName('letterbox')  
-  if(currentChar > 0 && currentChar < letters - 1) {
-    currentChar--
-    console.log(currentChar);  
-    chars[currentChar].textContent = '';
-  }  else if (currentChar = letters - 1) {
-    console.log(currentChar);  
-    chars[currentChar].textContent = '';
-    currentChar--
+function setChar(char) {
+  currentChar = char;
+  resetSelectedLetter()
+  wordsArray[currentWord].getElementsByClassName('letterbox')[currentChar].classList.add('selectedLetter');
+}
+
+function setWord() {
+  currentWord++
+  setChar(0);
+}
+
+function resetSelectedLetter() {
+    for (let i = 0; i <= currentWord; i++) {
+    let currentLetters = wordsArray[i].getElementsByClassName('letterbox')
+    for (let k = 0; k < currentLetters.length; k++) {
+      currentLetters[k].classList.remove('selectedLetter');
+    }
   }
 }
 
@@ -169,8 +189,7 @@ function win() {
 }
 
 function nextWord() {
-  currentWord++
-  currentChar = 0;
+  setWord()
 }
 
 function readWord() {
@@ -210,18 +229,10 @@ function showLetters(guess) {
 }
 
 
-function enterLetter(letter) {
-  //if word not full
-  let chars = wordsArray[currentWord].getElementsByClassName('letterbox')
-  chars[currentChar].textContent = letter  
-  if(currentChar < letters-1) {
-    currentChar++;
-  }
-}
-
 function setup() {
   drawWords();
   createEventListeners();
+  setChar(0);
 } 
 
 
