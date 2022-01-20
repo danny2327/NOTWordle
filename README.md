@@ -21,3 +21,13 @@ How It's Made
 Just some plain JS and CSS (using bootstrap, although mostly just for the modals)
 
 V 1.1.0
+---
+**Changelog**
+Fixed issue where when backspacing, the 4th letter would remain.  
+
+Prevent submitting word before all letters have been filled.
+
+Prevent interacting with the board after game ends, either because of win or loss. 
+
+Now highlights the current letter.
+
