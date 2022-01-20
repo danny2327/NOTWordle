@@ -12,23 +12,22 @@
     <div id="main">
       <div id="nav">
         <div id="howto">
-          <div id="reset">
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#HowToModal">
-              <img id="qm" src="./images/blueqm.svg" alt="How to Play">
-            </button>
-          </div>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#HowToModal">
+            <img id="qm" src="./images/blueqm.svg" alt="How to Play">
+          </button>
         </div>
+        <!-- <div id="settings">
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#SettingsModal">
+            <img id="stgs" src="./images/gear.png" alt="Settings">
+          </button>
+        </div> -->
         <div id="menu">
-          <div id="reset">
-            <butt class = "menuButton" id="btnReset">
-              Reset
-            </butt>
-        </div>
-        <div id="reset">
           <butt class = "menuButton" id="btnNew">
             New Game
           </butt>
-        </div>
+          <butt class = "menuButton" id="btnReset">
+            Reset
+          </butt>
         </div>
       </div>
       <div id="words">
@@ -73,26 +72,31 @@
         
       </div>
     </div>
-<!-- Modal -->
-<!-- <div id="how-modal" class="modal-window">
-  <div>
-    <a href="#" title="Close" class="how-modal-close">Close</a>
-    <h1>How To Play</h1>
-    <div>There is a 5 letter word. Guess it. <br>
-      Use the on screen keyboard, or your keyboard to enter a guess. 
-      <div><small>Hint: use the most common letters first.</small></div>
-      If the letter is in the right spot, it'll be green. <br>
-      If it's in in the puzzle, but in the wrong spot, it will be yellow. <br>
-      Press Enter or Submit to make your guess. 
-    </div>
-  </div>
-</div> -->
 
 <div class="modal" id="HowToModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">How To Play</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>There is a 5 letter word. Guess it. <br>
+      Use the on screen keyboard, or your keyboard to enter a guess. 
+      <div><small>Hint: use the most common letters first.</small></div>
+      If the letter is in the right spot, it'll be green. <br>
+      If it's in in the puzzle, but in the wrong spot, it will be yellow. <br>
+      Press Enter or Submit to make your guess. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="SettingsModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Settings</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

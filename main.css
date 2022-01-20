@@ -22,14 +22,21 @@ body {
 }
 
 #menu {
-  /* display: flex; */
-  /* flex-flow: row nowrap; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
-#qm {
+#menu button {
+  cursor: pointer;
+}
+
+#qm, #stgs {
   height:40px;
   width:40px;
 }
+
+
 
 
 .modal-content {

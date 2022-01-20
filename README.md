@@ -19,3 +19,5 @@ How It's Made
 ---
 
 Just some plain JS and CSS (using bootstrap, although mostly just for the modals)
+
+V 1.1.0
