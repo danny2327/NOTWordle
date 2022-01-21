@@ -23,16 +23,19 @@ How It's Made
 
 Just some plain JS and CSS (using bootstrap, although mostly just for the modals)
 
+**Changelog**
+V 1.1.2
+---
+Fixed what I broke in 1.1.1, namely being able to submit words...
+
 V 1.1.1
 ---
-**Changelog**
 Added Settings Pane
 Added "Wordiness" check.  It's on by default, so you can only guess real words. Not remembered between sessions, might do a cookie later.
 Added in-app version number.
 
 V 1.1.0
 ---
-**Changelog**
 Fixed issue where when backspacing, the 4th letter would remain.  
 
 Prevent submitting word before all letters have been filled.

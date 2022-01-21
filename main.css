@@ -54,6 +54,13 @@ body {
   color:rgb(177, 174, 174);
 }
 
+#msg {
+  color: red;
+  height:40px;
+  display: flex;
+  justify-content: center;
+}
+
 #words {
   /* height:500px; */
   margin: auto;
