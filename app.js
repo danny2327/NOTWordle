@@ -3,6 +3,10 @@ const wordsDOM = document.getElementById("words");
 const wordsArray = document.getElementsByClassName('word'); 
 const kb = document.getElementById('keyboard');
 
+const settings = {
+  wordiness: true
+}
+
 let gameOverModal = new bootstrap.Modal(document.getElementById('gameOverModal'));
 let wonModal = new bootstrap.Modal(document.getElementById('wonModal'));
 
@@ -67,9 +71,9 @@ function createEventListeners() {
     }
   })
 
-  // document.getElementById('btnReset').addEventListener('click', () => {
-  //     resetGame()
-  // });
+  document.getElementById('btnReset').addEventListener('click', () => {
+      resetGame()
+  });
 
   document.getElementById('btnNew').addEventListener('click', () => {
       newGame();
@@ -84,6 +88,22 @@ function createEventListeners() {
     wonModal.hide()  
     newGame();
   });    
+
+  document.getElementById('darkModeDiv').addEventListener('click', () => {
+    document.getElementById('dark').style.display = 'inline'
+  })
+
+  document.getElementById('wordiness').addEventListener('change', (e) => {
+    if (e.target.checked) {
+      settings.wordiness = true;
+    } else {
+      settings.wordiness = false;
+    }
+  })
+
+  SettingsModal.addEventListener('hide.bs.modal', () => {
+    wordsDOM.focus();
+  })
 }
 
 function resetGame() {
@@ -167,7 +187,7 @@ function pressEnter() {
       }     
     }
     
-    if(wordFull) {
+    if(wordFull && ((settings.wordiness && isWord()) || !settings.wordiness)) {
       submitWord();
     } else {
       console.log('Word is incomplete');
@@ -175,8 +195,16 @@ function pressEnter() {
   }
 }
 
+function isWord() {
+  let guess = readWord()
+  if (guess in wordList) {
+    return true;
+  }
+  return false;
+}
+
 function submitWord() {
-   let guess = readWord()
+  let guess = readWord()
   //  if (guess in wordList)
    let correct = showLetters(guess);
    if(correct === letters) { 

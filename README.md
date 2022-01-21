@@ -13,12 +13,22 @@ Press Enter or Submit to make your guess.
 
 If all the letters of a word aren't filled in, it won't submit.
 
+If the word is not a word that is in my large word list, it won't submit.  At some point I might use an online dictionary to check, but for now, this is what you get. 
+
+
 ![image](images/game.png)
 
 How It's Made
 ---
 
 Just some plain JS and CSS (using bootstrap, although mostly just for the modals)
+
+V 1.1.1
+---
+**Changelog**
+Added Settings Pane
+Added "Wordiness" check.  It's on by default, so you can only guess real words. Not remembered between sessions, might do a cookie later.
+Added in-app version number.
 
 V 1.1.0
 ---

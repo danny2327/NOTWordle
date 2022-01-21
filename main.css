@@ -36,15 +36,18 @@ body {
   width:40px;
 }
 
-
-
-
 .modal-content {
-  background-color: rgb(70, 124, 224);
+  background-color: rgb(144, 182, 252);
+  color:black
 }
 
 .btn-primary {
   background-color: rgb(16, 16, 138);
+}
+
+#dark {
+  display: none;
+  color: rgb(17, 2, 41)
 }
 
 .modal small {
