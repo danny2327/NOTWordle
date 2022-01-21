@@ -23,7 +23,7 @@ How It's Made
 
 Just some plain JS and CSS (using bootstrap, although mostly just for the modals)
 
-**Changelog**
+# Changelog
 
 V 1.1.2
 ---
