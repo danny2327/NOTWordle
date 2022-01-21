@@ -55,10 +55,14 @@ body {
 }
 
 #msg {
-  color: red;
+  color: rgb(112, 8, 8);
   height:40px;
   display: flex;
   justify-content: center;
+}
+
+#verNo {
+  color:black;
 }
 
 #words {

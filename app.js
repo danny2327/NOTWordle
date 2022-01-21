@@ -200,8 +200,13 @@ function pressEnter() {
         showMessage('Word is Incomplete');
       } else if (!isWord()){
         showMessage('Word not in List');
+
       }
     }
+  } else { 
+    wonModal.hide();
+    gameOverModal.hide();
+    newGame(); 
   }
 }
 

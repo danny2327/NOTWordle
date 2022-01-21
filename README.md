@@ -27,6 +27,8 @@ Just some plain JS and CSS (using bootstrap, although mostly just for the modals
 V 1.1.2
 ---
 Fixed what I broke in 1.1.1, namely being able to submit words...
+Added messages
+Can now use Enter to trigger Play Again button on modals.
 
 V 1.1.1
 ---
