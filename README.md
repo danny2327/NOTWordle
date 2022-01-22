@@ -25,6 +25,10 @@ Just some plain JS and CSS (using bootstrap, although mostly just for the modals
 
 # Changelog
 
+V 1.1.3
+---
+Vastly expanded word list so it detects most words now. 
+
 V 1.1.2
 ---
 Fixed what I broke in 1.1.1, namely being able to submit words...
