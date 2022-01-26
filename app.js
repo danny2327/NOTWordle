@@ -19,6 +19,7 @@ const wordList =
 [
 "AUGHT",
 "WANES",
+"LEGIT",
 "GROPE",
 "LIARS",
 "WANED",
@@ -263,13 +264,47 @@ const wordList =
 "YOUNG",
 "AFTER",
 "SINCE",
+"POURS",
+"FLUME",
 "SLASH",
+"SLAPS",
+"TONED",
+"TONER",
+"HEATS",
+"TEATS",
+"HEALS",
+"LADLE",
+"MELDS",
+"MELTS",
+"WINDY",
+"TOILS",
+"TOYED",
+"GLARE",
 "UNTIL",
 "WHILE",
+"NULLS",
+"GULLS",
+"PLOYS",
+"PLAID",
+"VOUCH",
+"MULLS",
+"RABID",
+"PINES",
+"MAXED",
 "AFOUL",
 "AGAIN",
+"PINKY",
+"ROAST",
 "AGAPE",
+"HEIST",
+"STAIR",
+"NECKS",
+"MENDS",
 "AGONE",
+"INKED",
+"HIRES",
+"LOINS",
+"STALE",
 "AHEAD",
 "AHULL",
 "ALIFE",
@@ -364,6 +399,7 @@ const wordList =
 "ADULT",
 "AGENT",
 "ANGER",
+"PURGE",
 "APPLE",
 "AWARD",
 "BASIS",
@@ -1807,10 +1843,10 @@ const wordList =
 "EXULT",
 "EXURB",
 "EYING",
-"EYRIE",
 "FABLE",
 "FACED",
 "FACER",
+"LUNGE",
 "FACES",
 "FACET",
 "FACIA",
@@ -2786,8 +2822,7 @@ function resetSelectedLetter() {
 
 function pressEnter() {
   if (!isGameOver) {  
-    let wordFull = true;
-    
+    let wordFull = true;    
     for (let l = 0; l < letters; l++) {
       if(wordsArray[currentWord].children[l].textContent ==='') {      
         wordFull=false;
@@ -2831,7 +2866,13 @@ function submitWord() {
 
 function gameOver() {
   isGameOver = true;
-  document.getElementById('theWordModal').textContent = WORD;
+  
+  //show definition
+  var defineLink = document.createElement('a')
+  defineLink.href = `https://www.google.com/search?q=define+${WORD}`
+  defineLink.target = '_BLANK';
+  defineLink.appendChild(document.createTextNode(WORD))
+  document.getElementById('theWordModal').appendChild(defineLink)
   gameOverModal.show()
 }
 
