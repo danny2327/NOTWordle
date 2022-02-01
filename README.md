@@ -6,14 +6,23 @@ How To Play
 
 There is a 5 letter word. Guess it.
 Use the on screen keyboard, or your keyboard to enter a guess.
-paint
+
+Start with a word with very common letters.  STARE is my go to.
+
 If the letter is in the right spot, it'll be green.
-If it's in in the puzzle, but in the wrong spot, it will be yellow.
+
+If the letter is in in the puzzle, but in the wrong spot, it will be yellow.
+
 Press or click Enter to make your guess.
 
-If all the letters of a word aren't filled in, it won't submit.
 
-If the word is not a word that is in my large word list, it won't submit.  At some point I might use an online dictionary to check, but for now, this is what you get. 
+When guessing, it will not submit if: 
+
+- All the letters of a word aren't filled in.
+
+- *Enforce Wordiness* is enabled (on by default) and the word is not a word in my large word list.  At some point I might use an online dictionary to check, but initial tests were quite slow, so for now, this is what you get. 
+
+- *Strict Mode* is enabled (off by default), and the guess doesn't use all previously revealed letters. 
 
 
 ![image](images/game.png)
@@ -21,9 +30,26 @@ If the word is not a word that is in my large word list, it won't submit.  At so
 How It's Made
 ---
 
-Just some plain JS and CSS (using bootstrap, although mostly just for the modals)
+Good old plain JS, HTML and CSS (using bootstrap, although mostly just for the modals).
+
 
 # Changelog
+
+V 1.1.5
+---
+Continued adding words.
+
+Added Strict Mode setting.  This allows you to enforce using all previously revealed letters (green or yellow) in any subsequent guesses.  
+
+Minor Refactoring
+
+V 1.1.4
+---
+Added more words.
+
+If you lose, when it displays the word, it is a link to define it, in case you don't know the word.  
+
+Minor refactoring
 
 V 1.1.3
 ---
