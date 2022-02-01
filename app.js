@@ -1,20 +1,3 @@
-
-const wordsDOM = document.getElementById("words");
-const wordsArray = document.getElementsByClassName('word'); 
-const kb = document.getElementById('keyboard');
-
-const dictURL = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
-const dictAPI_REQUEST_HEADERS = {
-  'Content-Type': 'application/json'
-};
-
-const settings = {
-  wordiness: true
-}
-
-let gameOverModal = new bootstrap.Modal(document.getElementById('gameOverModal'));
-let wonModal = new bootstrap.Modal(document.getElementById('wonModal'));
-
 const wordList = 
 [
 "AUGHT",
@@ -26,16 +9,21 @@ const wordList =
 "SHUNT",
 "SHUNT",
 "STERN",
-"PLEAT",
 "PLEAS",
+"PLEAT",
+"SPOIL",
 "PUTTS",
+"PLUCK",
+"PLUNK",
 "HUNTS",
+"HAIRY",
 "FREED",
 "MUSTY",
 "MINTS",
 "RUSTY",
 "LUSTY",
 "MINTY",
+"LEANS",
 "MISTY",
 "HOCKS",
 "JOCKS",
@@ -2649,10 +2637,24 @@ const wordList =
 "ZEBRA",
 "ZONES"
 ]
+const wordsDOM = document.getElementById("words");
+const wordsArray = document.getElementsByClassName('word'); 
+const kb = document.getElementById('keyboard');
+
+const dictURL = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
+const dictAPI_REQUEST_HEADERS = {
+  'Content-Type': 'application/json'
+};
+
+const settings = {
+  wordiness: true
+}
+
+let gameOverModal = new bootstrap.Modal(document.getElementById('gameOverModal'));
+let wonModal = new bootstrap.Modal(document.getElementById('wonModal'));
 
 let WORD;
 getNewWord();
-
 
 const words = 6;
 const letters = 5;
@@ -2664,7 +2666,7 @@ let currentChar;
 
 function getNewWord() {
   WORD = wordList[Math.round(Math.random()*wordList.length)]
-  console.log('LIKASJHTOLAFD'+WORD+'HFSDEFSIR')
+  console.log('LIKASJHTOLAFKLGFD'+WORD+'HASDFFSDEFSIR')
 }
 
 function drawWords() {
@@ -2938,6 +2940,7 @@ function setup() {
 //     // Catch and print errors if any
 //     .catch(error => console.error('Error getting word', error));
 // }
+
 
 setup();
 
