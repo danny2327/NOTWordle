@@ -18,6 +18,7 @@ const wordList =
 "PLUNK",
 "HUNTS",
 "SPANK",
+"GRAVY",
 "HAIRY",
 "FREED",
 "MUSTY",
@@ -30,6 +31,7 @@ const wordList =
 "HOCKS",
 "JOCKS",
 "MOCHA",
+"POPES",
 "FROZE",
 "OUGHT",
 "MARTS",
@@ -2649,8 +2651,11 @@ const dictAPI_REQUEST_HEADERS = {
 };
 
 const settings = {
-  wordiness: true
+  wordiness: true,
+  strict: true
 }
+
+let revealedLetters = [];
 
 let gameOverModal = new bootstrap.Modal(document.getElementById('gameOverModal'));
 let wonModal = new bootstrap.Modal(document.getElementById('wonModal'));
@@ -2725,16 +2730,18 @@ function createEventListeners() {
     newGame();
   });    
 
+
+  // SETTINGS //
   document.getElementById('darkModeDiv').addEventListener('click', () => {
     document.getElementById('dark').style.display = 'inline'
   })
+  
+  document.getElementById('strict').addEventListener('change', (e) => {
+    e.target.checked ? settings.strict = true : settings.strict = false;
+  })
 
   document.getElementById('wordiness').addEventListener('change', (e) => {
-    if (e.target.checked) {
-      settings.wordiness = true;
-    } else {
-      settings.wordiness = false;
-    }
+    e.target.checked ? settings.wordiness = true : settings.wordiness = false;
   })
 
   SettingsModal.addEventListener('hide.bs.modal', () => {
@@ -2853,15 +2860,39 @@ function isWord() {
   return false;
 }
 
+function checkForStrict(guess) {
+  for (let s = 0; s < revealedLetters.length; s++) {
+    const letter = revealedLetters[s];
+    if(!guess.includes(letter)) {
+      return false;
+    } 
+  } 
+  return true;
+}
+
 function submitWord() {
   let guess = readWord()
-  //  if (guess in wordList)
-   let correct = showLetters(guess);
-   if(correct === letters) { 
-     win()
-   } else {
-     currentWord === words-1 ? gameOver() : nextWord();
-   }
+
+  let isStrict = false;
+  if(settings.strict) {
+    isStrict = checkForStrict(guess);
+  }
+
+  let guessWord;
+  if(!settings.strict || isStrict && settings.strict) guessWord = true; 
+  else guessWord = false;
+  
+  if (guessWord) {
+    //actually doing it
+    let correct = showLetters(guess);
+    if(correct === letters) { 
+      win()
+    } else {
+      currentWord === words-1 ? gameOver() : nextWord();
+    }
+  } else { 
+    showMessage("Must Include All Revealed Letters")
+  }
 }
 
 function gameOver() {
@@ -2907,9 +2938,11 @@ function showLetters(guess) {
       correct++;
       chars[i].classList.add('rightplace')
       key.classList.add('rightplace')
+      revealedLetters.push(guess[i])
     } else if (WORD.indexOf(guess[i]) > -1) {
       chars[i].classList.add('wrongplace')
       key.classList.add('wrongplace')
+      revealedLetters.push(guess[i])
     } else {
       key.classList.add('guessed')
     }
