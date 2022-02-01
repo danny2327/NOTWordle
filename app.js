@@ -44,6 +44,7 @@ const wordList =
 "SURFS",
 "SHUNS",
 "STRUM",
+"MUNCH",
 "SLUGS",
 "SQUID",
 "THERE",
