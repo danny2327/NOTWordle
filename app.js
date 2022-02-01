@@ -10,12 +10,14 @@ const wordList =
 "SHUNT",
 "STERN",
 "PLEAS",
+"SHOUT",
 "PLEAT",
 "SPOIL",
 "PUTTS",
 "PLUCK",
 "PLUNK",
 "HUNTS",
+"SPANK",
 "HAIRY",
 "FREED",
 "MUSTY",
@@ -2708,10 +2710,6 @@ function createEventListeners() {
       deleteLastLetter()
     }
   })
-
-  document.getElementById('btnReset').addEventListener('click', () => {
-      resetGame()
-  });
 
   document.getElementById('btnNew').addEventListener('click', () => {
       newGame();
