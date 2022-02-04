@@ -35,6 +35,18 @@ Good old plain JS, HTML and CSS (using bootstrap, although mostly just for the m
 
 # Changelog
 
+
+V 1.1.7
+---
+A few new words
+Fixed strict mode display
+
+V 1.1.6
+---
+Disabled strict mode by default
+A few new words
+Fixed bug re strict mode not resetting on new game
+
 V 1.1.5
 ---
 Continued adding words.
