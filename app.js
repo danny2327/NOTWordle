@@ -477,6 +477,7 @@ const wordList =
 "PILOT",
 "PITCH",
 "PLANE",
+"PLANK",
 "PLANT",
 "PLATE",
 "POUND",
@@ -2653,7 +2654,7 @@ const dictAPI_REQUEST_HEADERS = {
 
 const settings = {
   wordiness: true,
-  strict: true
+  strict: false
 }
 
 let revealedLetters = [];
@@ -2779,6 +2780,9 @@ function resetGame() {
   //reset guess position
   currentWord = 0;
   setChar(0);
+
+  //reset revealed letters
+  revealedLetters = [];
 }
 
 function newGame() {
