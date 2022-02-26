@@ -36,6 +36,12 @@ Good old plain JS, HTML and CSS (using bootstrap, although mostly just for the m
 # Changelog
 
 
+V 1.1.8
+---
+Fixed bug with multiple losses (yeah it took me this long to figure that out, I rarely lose) where it would only add the next word when it showed you what the word was. 
+Some more words added. 
+
+
 V 1.1.7
 ---
 A few new words

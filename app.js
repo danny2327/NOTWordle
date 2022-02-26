@@ -1,13 +1,44 @@
 const wordList = 
 [
 "AUGHT",
+"FUCKY",
+"FUCKS",
+"PICKY",
+"WAGED",
+"WAZED",
+"GAZED",
+"GAMED",
+"JADED",
+"WADED",
+"WAVED",
+"CHINK",
+"SPINY",
+"SLING",
+"PALMS",
+"HACKS",
+"POLKA",
+"RAKES",
+"RAPES",
+"RAVES",
+"RAGES",
+"HIVES",
+"TAPED",
+"HIDES",
+"MARES",
+"WARES",
+"HARES",
 "WANES",
 "LEGIT",
 "GROPE",
 "LIARS",
 "WANED",
 "SHUNT",
-"SHUNT",
+"SQUAT",
+"HONES",
+"YOYOS",
+"FROGS",
+"PRODS",
+"REUSE",
 "STERN",
 "PLEAS",
 "SHOUT",
@@ -372,7 +403,6 @@ const wordList =
 "TALLY",
 "TANTO",
 "TODAY",
-"TOMOZ",
 "TRULY",
 "TWICE",
 "UNDER",
@@ -2831,10 +2861,10 @@ function setWord() {
 
 function resetSelectedLetter() {
     for (let i = 0; i <= currentWord; i++) {
-    let currentLetters = wordsArray[i].getElementsByClassName('letterbox')
-    for (let k = 0; k < currentLetters.length; k++) {
-      currentLetters[k].classList.remove('selectedLetter');
-    }
+      let currentLetters = wordsArray[i].getElementsByClassName('letterbox')
+      for (let k = 0; k < currentLetters.length; k++) {
+        currentLetters[k].classList.remove('selectedLetter');
+      }
   }
 }
 
@@ -2908,11 +2938,15 @@ function submitWord() {
 
 function gameOver() {
   isGameOver = true;
-  
+  let wordModalLocation = document.getElementById('theWordModal')
+  console.log('wordModalLocation',wordModalLocation);
+  wordModalLocation.innerHTML = '';
   //show definition
   var defineLink = document.createElement('a')
   defineLink.href = `https://www.google.com/search?q=define+${WORD}`
   defineLink.target = '_BLANK';
+  // console.log(document.createTextNode(WORD));
+  // defineLink.textContent = document.createTextNode(WORD)
   defineLink.appendChild(document.createTextNode(WORD))
   document.getElementById('theWordModal').appendChild(defineLink)
   gameOverModal.show()
