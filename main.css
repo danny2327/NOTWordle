@@ -107,8 +107,7 @@ body {
   font-weight: 600;
   width: 100%;
   margin-top: 20px;
-  display: none;
-  
+  display: none;  
 }
 
 #keyboard {
@@ -156,4 +155,5 @@ body {
 
 .guessed {
   background-color: rgb(19, 19, 19);
+  color:rgb(100, 99, 99);
 }
