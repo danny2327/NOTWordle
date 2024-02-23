@@ -2777,9 +2777,6 @@ function createEventListeners() {
     window.open('https://docs.google.com/forms/d/e/1FAIpQLScGEOWTpxPkUN35gcLs5F1FO1qtaZSn9g_6VQW0BPcCUVjMaw/viewform?usp=sf_link', '_BLANK')
   });    
 
-
-
-
   // SETTINGS //
   document.getElementById('darkModeDiv').addEventListener('click', () => {
     document.getElementById('dark').style.display = 'inline'

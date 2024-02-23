@@ -69,6 +69,10 @@ body {
   color:black;
 }
 
+#changelog {
+  font-size: .8em;
+}
+
 #words {
   /* height:500px; */
   margin: auto;
