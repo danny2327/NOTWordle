@@ -35,6 +35,14 @@ Good old plain JS, HTML and CSS (using bootstrap, although mostly just for the m
 
 # Changelog
 
+V 1.2.0
+---
+I figure returning after all this time is worthy of at least a minor version bump. 
+Added button to report missing words. 
+A few more new words. 
+Tweaked the text colour of guessed letters to be darker, as I found it hard to distinguish, even with the background colour different. 
+
+
 
 V 1.1.8
 ---

@@ -2682,6 +2682,7 @@ const wordList =
 const wordsDOM = document.getElementById("words");
 const wordsArray = document.getElementsByClassName('word'); 
 const kb = document.getElementById('keyboard');
+const shouldbeaword = document.getElementById('shouldbeaword');
 
 const dictURL = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
 const dictAPI_REQUEST_HEADERS = {
@@ -2730,10 +2731,11 @@ function drawWords() {
 
 function createEventListeners() {
   kb.addEventListener('click', (e) => {
-    
+    //backspace
     if(e.target.id === 'back') { 
       deleteLastLetter();
     }
+    //enter
     else if(e.target.id === 'enter') { 
       pressEnter();
     } else {
@@ -2744,6 +2746,7 @@ function createEventListeners() {
     }
   })
 
+  //the letters
   document.addEventListener('keyup', (e) => {
     if (e.keyCode > 64 && e.keyCode < 91) {
       enterLetter(e.key.toUpperCase())
@@ -2768,6 +2771,14 @@ function createEventListeners() {
     newGame();
   });    
 
+  document.getElementById('shouldbeaword').addEventListener('click', () => {
+    navigator.clipboard.writeText(readWord())
+    setTimeout({}, 500) //necessary to give it time to copy. 
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLScGEOWTpxPkUN35gcLs5F1FO1qtaZSn9g_6VQW0BPcCUVjMaw/viewform?usp=sf_link', '_BLANK')
+  });    
+
+
+
 
   // SETTINGS //
   document.getElementById('darkModeDiv').addEventListener('click', () => {
@@ -2790,9 +2801,14 @@ function createEventListeners() {
 function showMessage(message) {
   let msgField = document.getElementById('msg');
   msgField.textContent = message;
+  if(message=='Word not in List') {
+    shouldbeaword.style.display = 'inline'
+  }
   setTimeout(() => {
     msgField.textContent = '';
-  }, 3000)
+    shouldbeaword.style.display = 'none'
+
+  }, 5000)
 }
 
 function resetGame() {
@@ -2883,7 +2899,6 @@ function pressEnter() {
         showMessage('Word is Incomplete');
       } else if (!isWord()){
         showMessage('Word not in List');
-
       }
     }
   } else { 
