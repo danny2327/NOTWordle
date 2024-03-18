@@ -29,39 +29,42 @@ When guessing, it will not submit if:
 
 How It's Made
 ---
-
 Good old plain JS, HTML and CSS (using bootstrap, although mostly just for the modals).
 
 
 # Changelog
 
-V 1.2.0
+V 1.2.1 - 03-17-2024
+---
+Added letter hover and click animations.
+Prevent letters from being selected (highlighted)
+A few more new words from submissions. 
+
+
+V 1.2.0 - 02-22-2024
 ---
 I figure returning after all this time is worthy of at least a minor version bump. 
 Added button to report missing words. 
 A few more new words. 
 Tweaked the text colour of guessed letters to be darker, as I found it hard to distinguish, even with the background colour different. 
 
-
-
-V 1.1.8
+V 1.1.8 - 02-26-2022
 ---
 Fixed bug with multiple losses (yeah it took me this long to figure that out, I rarely lose) where it would only add the next word when it showed you what the word was. 
 Some more words added. 
 
-
-V 1.1.7
+V 1.1.7 - 02-03-2022
 ---
 A few new words
 Fixed strict mode display
 
-V 1.1.6
+V 1.1.6 - 02-03-2022
 ---
 Disabled strict mode by default
 A few new words
 Fixed bug re strict mode not resetting on new game
 
-V 1.1.5
+V 1.1.5 - 02-01-2022
 ---
 Continued adding words.
 
@@ -69,7 +72,7 @@ Added Strict Mode setting.  This allows you to enforce using all previously reve
 
 Minor Refactoring
 
-V 1.1.4
+V 1.1.4 - 02-01-2022
 ---
 Added more words.
 
@@ -77,7 +80,7 @@ If you lose, when it displays the word, it is a link to define it, in case you d
 
 Minor refactoring
 
-V 1.1.3
+V 1.1.3 - 02-01-2022
 ---
 Vastly expanded word list so it detects most words now. 
 
