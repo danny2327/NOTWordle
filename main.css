@@ -137,6 +137,14 @@ body {
   background-color: rgb(51, 51, 51);
 }
 
+.letter:hover {
+  background-color: rgb(31, 31, 31);
+}
+
+.letter:active {
+  color: rgb(136, 134, 134);
+}
+
 .long {
   width: 50px;
 }
