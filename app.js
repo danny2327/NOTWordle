@@ -19,9 +19,22 @@ const wordList =
 "WAZED",
 "GAZED",
 "GAMED",
+"TREAD",
 "JADED",
 "WADED",
 "WAVED",
+"TALON",
+"TIMED",
+"PYLON",
+"LONER",
+"TARDY",
+"GATOR",
+"GATED",
+"PILER",
+"PYLON",
+"PULPS",
+"LICKS",
+"GULPS",
 "CHINK",
 "SPINY",
 "PUSSY",
@@ -2748,21 +2761,23 @@ function drawWords() {
 }
 
 function createEventListeners() {
-  kb.addEventListener('click', (e) => {
-    //backspace
-    if(e.target.id === 'back') { 
-      deleteLastLetter();
-    }
-    //enter
-    else if(e.target.id === 'enter') { 
-      pressEnter();
-    } else {
-      // e.target.id
-      if(!e.target.id.startsWith('row') && e.target.id !== 'keyboard') {
-        enterLetter(e.target.id);
-      }
-    }
-  })
+  // Guess I was not even using this anymore. 
+  // kb.addEventListener('click', (e) => {
+  //   console.log(e.target.id)
+  //   //backspace
+  //   if(e.target.id === 'back' || e.target.id === 'delete') { 
+  //     deleteLastLetter();
+  //   }
+  //   //enter
+  //   else if(e.target.id === 'enter') { 
+  //     pressEnter();
+  //   } else {
+  //     // e.target.id
+  //     if(!e.target.id.startsWith('row') && e.target.id !== 'keyboard') {
+  //       enterLetter(e.target.id);
+  //     }
+  //   }
+  // })
 
   //the letters
   document.addEventListener('keyup', (e) => {
@@ -2770,7 +2785,7 @@ function createEventListeners() {
       enterLetter(e.key.toUpperCase())
     } else if (e.key === "Enter") {
       pressEnter()
-    } else if (e.key === "Backspace") {
+    } else if ((e.key === "Backspace") || (e.key === "Delete")) {
       deleteLastLetter()
     }
   })

@@ -34,6 +34,12 @@ Good old plain JS, HTML and CSS (using bootstrap, although mostly just for the m
 
 # Changelog
 
+V 1.2.2 - 05-17-2024
+---
+Add delete as backspace substitute (The prevent default does not work on Vivaldi)
+
+A few more new words from submissions. 
+
 V 1.2.1 - 03-17-2024
 ---
 Added letter hover and click animations.
