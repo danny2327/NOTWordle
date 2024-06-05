@@ -2761,25 +2761,25 @@ function drawWords() {
 }
 
 function createEventListeners() {
-  // Guess I was not even using this anymore. 
-  // kb.addEventListener('click', (e) => {
-  //   console.log(e.target.id)
-  //   //backspace
-  //   if(e.target.id === 'back' || e.target.id === 'delete') { 
-  //     deleteLastLetter();
-  //   }
-  //   //enter
-  //   else if(e.target.id === 'enter') { 
-  //     pressEnter();
-  //   } else {
-  //     // e.target.id
-  //     if(!e.target.id.startsWith('row') && e.target.id !== 'keyboard') {
-  //       enterLetter(e.target.id);
-  //     }
-  //   }
-  // })
+  // This is the event listener for clicking the letters
+  kb.addEventListener('click', (e) => {
+    console.log(e.target.id)
+    //backspace
+    if(e.target.id === 'back' || e.target.id === 'delete') { 
+      deleteLastLetter();
+    }
+    //enter
+    else if(e.target.id === 'enter') { 
+      pressEnter();
+    } else {
+      // e.target.id
+      if(!e.target.id.startsWith('row') && e.target.id !== 'keyboard') {
+        enterLetter(e.target.id);
+      }
+    }
+  })
 
-  //the letters
+  //event listener for keyboard input.
   document.addEventListener('keyup', (e) => {
     if (e.keyCode > 64 && e.keyCode < 91) {
       enterLetter(e.key.toUpperCase())

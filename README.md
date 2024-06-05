@@ -34,6 +34,10 @@ Good old plain JS, HTML and CSS (using bootstrap, although mostly just for the m
 
 # Changelog
 
+V 1.2.2.1 - 06-04-2024
+---
+Fixed a pretty substantial bug that prevented clicking the letters on the screen.  Caused by a misguided attempt to clean up the code, and commenting out what I thought was duplicate code. Comment your code kids!  Thanks to user Gloria for the bug report. 
+
 V 1.2.2 - 05-17-2024
 ---
 Add delete as backspace substitute (The prevent default does not work on Vivaldi)
